@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Licensed Electrician | 24/7 Emergency Electrical Services</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: #f5f9ff;
+      color: #1a1a1a;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
+      url('https://images.unsplash.com/photo-1621905252507-b35492cc74b4?q=80&w=1400&auto=format&fit=crop') center/cover;
+      min-height: 100vh;
+      color: white;
+      display: flex;
+      flex-direction: column;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 8%;
+      background: rgba(0,0,0,0.3);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(8px);
+    }
+
+    .logo {
+      font-size: 30px;
+      font-weight: 700;
+      color: #2ea8ff;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #2ea8ff;
+    }
+
+    .hero {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 80px 8%;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .hero-text {
+      max-width: 600px;
+    }
+
+    .hero-text h1 {
+      font-size: 58px;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    .hero-text p {
+      font-size: 18px;
+      margin-bottom: 30px;
+      color: #e5e5e5;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 15px 30px;
+      border-radius: 50px;
+      border: none;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn-primary {
+      background: #2ea8ff;
+      color: white;
+      box-shadow: 0 10px 25px rgba(46,168,255,0.4);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      background: #1189df;
+    }
+
+    .btn-secondary {
+      background: transparent;
+      border: 2px solid white;
+      color: white;
+    }
+
+    .btn-secondary:hover {
+      background: white;
+      color: #111;
+    }
+
+    .hero-card {
+      background: white;
+      padding: 35px;
+      border-radius: 25px;
+      width: 350px;
+      color: #111;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+      animation: float 4s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
+    }
+
+    .hero-card h3 {
+      margin-bottom: 15px;
+      color: #1189df;
+      font-size: 26px;
+    }
+
+    .hero-card ul {
+      list-style: none;
+    }
+
+    .hero-card ul li {
+      margin: 12px 0;
+      font-size: 15px;
+      padding-left: 22px;
+      position: relative;
+    }
+
+    .hero-card ul li::before {
+      content: '✔';
+      position: absolute;
+      left: 0;
+      color: #1189df;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 90px 8%;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .section-title h2 {
+      font-size: 42px;
+      margin-bottom: 10px;
+      color: #0d2b4d;
+    }
+
+    .section-title p {
+      color: #666;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .service-box {
+      background: white;
+      padding: 35px 25px;
+      border-radius: 20px;
+      text-align: center;
+      transition: 0.4s;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    .service-box:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 45px rgba(0,0,0,0.12);
+    }
+
+    .service-box .icon {
+      font-size: 50px;
+      margin-bottom: 15px;
+    }
+
+    .service-box h3 {
+      margin-bottom: 12px;
+      color: #0d2b4d;
+    }
+
+    .why-us {
+      background: linear-gradient(135deg, #0d2b4d, #1189df);
+      color: white;
+      border-radius: 30px;
+      padding: 60px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      align-items: center;
+    }
+
+    .why-box {
+      background: rgba(255,255,255,0.1);
+      padding: 30px;
+      border-radius: 20px;
+      transition: 0.3s;
+    }
+
+    .why-box:hover {
+      background: rgba(255,255,255,0.2);
+      transform: scale(1.03);
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+      margin-top: 60px;
+    }
+
+    .stat-box {
+      background: white;
+      padding: 30px;
+      text-align: center;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    .stat-box h3 {
+      font-size: 40px;
+      color: #1189df;
+    }
+
+    .cta {
+      background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
+      url('https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?q=80&w=1400&auto=format&fit=crop') center/cover;
+      color: white;
+      text-align: center;
+      border-radius: 30px;
+      padding: 80px 30px;
+    }
+
+    .cta h2 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+
+    .cta p {
+      max-width: 700px;
+      margin: auto auto 30px;
+      color: #ddd;
+    }
+
+    footer {
+      background: #071321;
+      color: white;
+      padding: 40px 8%;
+      text-align: center;
+    }
+
+    footer p {
+      margin-top: 10px;
+      color: #aaa;
+    }
+
+    @media (max-width: 900px) {
+      .hero-text h1 {
+        font-size: 42px;
+      }
+
+      nav {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .hero {
+        justify-content: center;
+        text-align: center;
+      }
+
+      .hero-btns {
+        justify-content: center;
+      }
+
+      .hero-card {
+        width: 100%;
+        max-width: 400px;
+      }
+
+      .cta h2 {
+        font-size: 34px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <div class="logo">Licensed Electrician</div>
+      <div class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#about">Why Us</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+
+    <div class="hero">
+      <div class="hero-text">
+        <h1>24/7 Emergency Electrician Services in the USA</h1>
+        <p>
+          Fast, reliable, and professional electrical repair solutions for homeowners.
+          Available day and night for emergency repairs, wiring issues, and same-day service.
+        </p>
+
+        <div class="hero-btns">
+          <a href="tel:+18775163965" class="btn btn-primary">📞 Call Now</a>
+          <a href="#services" class="btn btn-secondary">View Services</a>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <h3>Emergency Services</h3>
+        <ul>
+          <li>24/7 Emergency Electrician</li>
+          <li>Residential Electrical Repair</li>
+          <li>Wiring & Circuit Repair</li>
+          <li>Fast Same-Day Service</li>
+          <li>Licensed & Trusted Experts</li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <section id="services">
+    <div class="section-title">
+      <h2>Our Electrical Services</h2>
+      <p>
+        Professional electrical services for homes across the USA with quick response times and trusted workmanship.
+      </p>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-box">
+        <div class="icon">⚡</div>
+        <h3>Emergency Electrician</h3>
+        <p>
+          Rapid response emergency electrical services available 24 hours a day.
+        </p>
+      </div>
+
+      <div class="service-box">
+        <div class="icon">🔧</div>
+        <h3>Electrical Repair</h3>
+        <p>
+          Professional troubleshooting and repair for all electrical problems.
+        </p>
+      </div>
+
+      <div class="service-box">
+        <div class="icon">🏠</div>
+        <h3>Residential Electrician</h3>
+        <p>
+          Safe and reliable residential electrical installations and maintenance.
+        </p>
+      </div>
+
+      <div class="service-box">
+        <div class="icon">🧰</div>
+        <h3>Wiring Repair</h3>
+        <p>
+          Expert wiring inspections and repairs to keep your home safe.
+        </p>
+      </div>
+
+      <div class="service-box">
+        <div class="icon">🚨</div>
+        <h3>Same Day Service</h3>
+        <p>
+          Fast same-day electrician services for urgent electrical issues.
+        </p>
+      </div>
+
+      <div class="service-box">
+        <div class="icon">💡</div>
+        <h3>Lighting Solutions</h3>
+        <p>
+          Indoor and outdoor lighting installation, repair, and upgrades.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="why-us">
+      <div>
+        <h2 style="font-size: 42px; margin-bottom: 20px;">
+          Why Choose Licensed Electrician?
+        </h2>
+        <p>
+          We deliver dependable electrical services with fast response times, certified electricians, and customer-first support.
+        </p>
+      </div>
+
+      <div class="why-box">
+        <h3>✔ 24/7 Availability</h3>
+        <p>
+          Emergency electricians ready to respond anytime, day or night.
+        </p>
+      </div>
+
+      <div class="why-box">
+        <h3>✔ Trusted Professionals</h3>
+        <p>
+          Experienced and licensed electricians focused on safety and quality.
+        </p>
+      </div>
+
+      <div class="why-box">
+        <h3>✔ Fast Response</h3>
+        <p>
+          Same-day and emergency service for urgent electrical issues.
+        </p>
+      </div>
+    </div>
+
+    <div class="stats">
+      <div class="stat-box">
+        <h3>24/7</h3>
+        <p>Emergency Support</p>
+      </div>
+
+      <div class="stat-box">
+        <h3>100%</h3>
+        <p>Customer Satisfaction</p>
+      </div>
+
+      <div class="stat-box">
+        <h3>500+</h3>
+        <p>Homes Serviced</p>
+      </div>
+
+      <div class="stat-box">
+        <h3>15+</h3>
+        <p>Years Experience</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="cta">
+      <h2>Need an Emergency Electrician?</h2>
+      <p>
+        Contact Licensed Electrician today for immediate assistance with electrical repairs, wiring issues, and same-day electrician services.
+      </p>
+
+      <a href="tel:+18775163965" class="btn btn-primary">📞 Call (877) 516-3965</a>
+    </div>
+  </section>
+
+  <footer>
+    <h3>Licensed Electrician</h3>
+    <p>Professional 24/7 Emergency Electrical Services Across the USA</p>
+    <p>© 2026 Licensed Electrician. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>
